@@ -447,7 +447,7 @@ function exportRuntime() {
       }
     }
 
-    if (unexported.length) {
+    if (!MINIMAL_RUNTIME && unexported.length) {
       unexportedStubs += 'var unexportedRuntimeSymbols = [\n';
       for (const sym of unexported) {
         unexportedStubs += `  '${sym}',\n`;
